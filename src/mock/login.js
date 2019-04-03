@@ -26,5 +26,8 @@ export const getUserInfo = req => {
   const params = getArgs(req.url.split('?')[1])
   return sucResponse(USER_MAP[params.token])
 }
+export const logout =req=>{
+  return sucResponse({'message':'success'});
+}
 
 

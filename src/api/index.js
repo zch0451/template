@@ -12,6 +12,7 @@ function login({userName,password}) {
         data:querystring.stringify(data)
     });
 }
+//获取用户数据信息
 function getUserInfo(token) {
     const data = {
         token
@@ -22,8 +23,15 @@ function getUserInfo(token) {
         params:data
     });
 }
-
+//退出登入
+function logout() {
+    return instance({
+        method: 'post',
+        url:  '/logout'
+    });
+}
 export {
     login,
-    getUserInfo
+    getUserInfo,
+    logout
 }

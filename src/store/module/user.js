@@ -1,4 +1,4 @@
-import {login,getUserInfo} from '@/api/'
+import {login,getUserInfo,logout} from '@/api/'
 import { setToken, getToken } from '@/lib/util'
 
 export default {
@@ -45,6 +45,18 @@ export default {
                 } catch (error) {
                     reject(error)
                 }
+            })
+        },
+        // 退出登录
+        handleLogOut ({ state, commit }) {
+            return new Promise((resolve, reject) => {
+                logout(state.token).then(() => {
+                    commit('setToken', '')
+                    commit('setUser', {})
+                    resolve()
+                }).catch(err => {
+                    reject(err)
+                })
             })
         }
     }
