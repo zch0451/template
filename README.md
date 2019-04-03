@@ -15,3 +15,4 @@ npm run dev
 npm run build
 
 用户名admin 密码任意，做到vuex保存的state数据刷新不消失；
+添加了mock.js 去模拟数据
